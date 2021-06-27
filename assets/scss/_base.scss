@@ -1,0 +1,32 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    // This defines what 1rem is
+    font-size: 100%; //1 rem = 10px; 10px/16px = 62.5%
+}
+
+body {
+    @include respond(phone) {
+        padding: 0;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    &::selection {
+        background-color: $color-primary;
+        color: $color-white;
+    }
+}

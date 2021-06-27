@@ -1,0 +1,27 @@
+.button {
+    background-color: blue;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+}
+
+
+
+.button--secondary {
+    @extend .button;
+    background-color: red;
+}
+
+%placeholder {
+    width: 100%;
+    height: 100%;
+}
+body {
+    @extend %placeholder;
+}
+p {
+    @extend %placeholder;
+}

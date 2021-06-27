@@ -1,0 +1,64 @@
+body {
+    background-color: $color-gray-1;
+}
+
+.wrapper {
+    @include center_with_flex;
+    @include respond (phone){
+        flex-direction: column;
+    }
+
+    @include respond (tablet){
+        flex-direction: row;
+        margin-right: 50px;
+    }
+}
+
+.wrapper-2 {
+    @include center_with_position;
+    @include respondCustom (400px) {
+        background-color: blue;
+        margin-left: 100px;
+    }
+}
+
+.wrapper-3 {
+    @include center_with_position;
+    @include respondCustom (450px) {
+        background-color: blue;
+        margin-left: 100px;
+    }
+}
+
+.wrapper-4 {
+    @include center_with_flex;
+}
+
+.wrapper {
+    &__logo {
+        font-size: 40px;
+    }
+
+        
+        &__button--bigger {
+            font-size: 40px;
+        }
+
+
+    &__list {
+        .__item {
+            font-size: 40px;
+            margin: add-numbers(-number, -number);
+        }
+    }
+}
+
+@function add-numbers($first-number, $second-number) {
+    @if $first-number == 0 {
+        @return $second-number;
+    }
+    @else if $second-number == 10 {
+        @return $first-number + $second-number;
+    }
+}
+

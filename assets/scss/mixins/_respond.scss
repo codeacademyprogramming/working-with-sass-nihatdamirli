@@ -1,0 +1,19 @@
+@mixin respond($screen-type: phone) {
+    @if $screen-type == phone {
+        // screens less than 1320 pixel
+        @media only screen and (max-width: 600px) {
+            @content;
+        }
+    }
+    @else if $screen-type == tablet {
+        @media only screen and (max-width: 900px) {
+            @content;
+        }
+    }
+}
+
+@mixin respondCustom($screen-size) {
+    @media only screen and (max-width: $screen-size) {
+        @content;
+    }
+}
